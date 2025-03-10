@@ -1,0 +1,24 @@
+Q.1)What is the role of ISP between Client and DNS in requesting a message to a desktop by an user?
+Ans.) - ✔ Provides the initial DNS resolution for domain names.
+        ✔ Routes the data packets between the client and the requested web server.
+        ✔ Ensures efficient and fast data transfer through its network infrastructure.
+
+Q.2)Is video tag a semantic tag?
+Ans.) No, the <video> tag is not a semantic tag.Semantic tags, like <header>, <article>, <section>, and <footer>, give meaning to the content they contain, helping search engines and developers understand the page structure.
+The <video> tag, on the other hand, is a media element used to embed videos in a webpage. It defines functionality (playing video) rather than meaning.If you want a semantic wrapper for a video, you can place it inside a 
+<figure> tag with a <figcaption> to provide descriptive context.
+ <figure>
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>This is an explanatory video about AI.</figcaption>
+</figure>
+
+Q.3)Is figure tag a semantic tag?
+Ans.) Yes, the <figure> tag is a semantic tag in HTML.It is used to group media elements like images, illustrations, diagrams, videos, or code snippets, along with their captions. 
+The purpose of the <figure> tag is to provide meaningful context to the content, making it more understandable for both developers and search engines.
+<figure>
+  <img src="ai-robot.png" alt="AI-powered robot">
+  <figcaption>An AI-powered robot in action.</figcaption>
+</figure>
