@@ -1,0 +1,408 @@
+### **CSS Overview**
+CSS (Cascading Style Sheets) is used to style the visual presentation of HTML documents, such as text colors, layout, and background styling.
+
+#### **Basic CSS Syntax**
+```css
+h1 {
+  color: red; /* Property: color, Value: red */
+}
+- **h1** is the **selector**.
+- **color** is the **property**.
+- **red** is the **value**.
+
+### **Types of CSS**
+1. **Inline Styles**: Directly within HTML elements.
+   ```html
+   <h3 style="color: rgb(8, 5, 86)">Stuti Gupta</h3>
+   ```
+
+2. **Internal Styles**: Within the `<style>` tag inside the HTML `<head>`.
+   ```html
+   <style>
+     h3 { color: red; }
+   </style>
+   ```
+
+3. **External Styles**: In a separate `.css` file, linked to HTML.
+   ```html
+   <link rel="stylesheet" href="style.css">
+   ```
+
+### **Text Properties**
+1. **Text Alignment**: Controls text positioning.
+   ```css
+   text-align: left | right | center | justify;
+   ```
+
+2. **Font Weight**: Adjusts text thickness (100-900).
+   ```css
+   font-weight: normal | bold | 100 | bolder;
+   ```
+
+3. **Text Decoration**: Controls text decorations (underline, strikethrough).
+   ```css
+   text-decoration: none | underline | overline | line-through;
+   ```
+
+4. **Line Height**: Controls vertical space between lines.
+   ```css
+   line-height: normal | 2.5;
+   ```
+
+5. **Letter Spacing**: Adjusts spacing between letters.
+   ```css
+   letter-spacing: normal | 10px;
+   ```
+
+6. **Font Size**: Defines text size (px, %, em, rem).
+   ```css
+   font-size: 16px | 120% | 1.2em;
+   ```
+
+7. **Font Family**: Specifies font(s) to use.
+   ```css
+   font-family: Arial, sans-serif;
+   ```
+
+8. **Text Transform**: Changes case of text.
+   ```css
+   text-transform: uppercase | lowercase | capitalize;
+   ```
+
+
+This version simplifies the explanations while retaining key details. It gives a clear, quick reference for essential CSS concepts and properties.---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Universal Selector (*) : *{
+                            property : value;
+                          }
+Element Selector : To select all the elements of the same type. such as h1{ color : red } or h1,h3{color : red; }
+Id Selector : Selects an element based on the value of the element's id attribute. #idselector{ color : red; }
+Class Selector : Selects an element based on their class attribute. such as .myclass{ property : value; } or .class a { property : value ; } to change in alll the anchor tags in the given class names
+Descendant Selector : Selects all paragraphs inside divs such as div p{ property : value; } where div p is a descendant selector to select all the paragraph tags which is under p tag
+ nav ul li 
+Adjacent Sibling Combinator : p + h3 { property : value;} selecting all the h3 tags which are coming immediately after h3.
+Child Combinator : span > button { property : value;} can't go at multiple levels such as descendant selector.
+Attribute Selector : Selects elements based on the presence or value of a given attribute. input [attr = "value"] { property : value ;} or input [type] { property : value ; }
+If there is a flask infront of any MDN code then it is presently at an experiment phase so don't use it in any of your projects for production at that particular moment.
+Pseudo Class : A keyword added to a selector that specifies a special state of the selected element(s).
+:hover let us suppose if I am going to the button element then it must become black background color and white color as text so to make it we can make a hover by button : hover { background-color : black; color : white; }
+:active : it is changed when the particular button is clicked for example : button : active { background-color : hotpink; } if some attributes have defined their unique id or class then the foreground color will be chnaged.
+:checked : It is used at the time when one of the radio or checkboxes button is clicked then it may change the appearance of it such as input[type = "radio"] :checked + label{ color : red; font-size : bold; }
+:nth-of-type : to change the property of the particular number of part in a particular element : div : nth-of-type(2){ property : value; } write 2n for every even numbered element
+
+Pseudo Element : A keyword added to a selector that lets you style a specific part of the selected elements.
+::first-letter
+::first-line
+::selection
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is cascade in CSS?
+-The CSS cascade algorithm is a fundamental concept that determines how styles are applied to elements when multiple conflicting rules exist. It ensures that the correct CSS declaration is chosen based on a set of rules.
+
+How the Cascade Works?
+When multiple CSS rules apply to the same element, the cascade follows these steps to determine which style wins :
+
+1.Origin & Importance :-
+CSS can come from different sources:
+  User Agent Stylesheet (Browser Defaults)
+  Author Stylesheet (Your CSS Code)
+  User Stylesheet (Custom user-defined styles in browsers)
+  The priority order is:
+      !important rules from the user stylesheet where !@important is used to show the most important thing in the document for example : h3 { color : white !important; } which will definitely be applied every time whether it is 
+              declare twice or n times after declaring this.
+      !important rules from the author stylesheet (your CSS)
+      Normal rules from the author stylesheet
+      Normal rules from the user stylesheet
+      Browser default styles
+
+2.Specificity :- It is an algorithm that calculates the weight that is applied to a given CSS declaration.
+If multiple rules target the same element, the one with the higher specificity wins.
+Specificity is calculated based on the type of selector used:
+    Inline styles (style="color: red;") → Highest specificity (1,0,0,0)
+    ID selectors (#id) → (0,1,0,0)
+    Class selectors (.class), attributes ([attr]), and pseudo-classes (:hover) → (0,0,1,0)
+    Element selectors (h1, p) and pseudo-elements (::before) → (0,0,0,1) ,descendant selectors
+
+3.Source Order (Last Rule Wins) :-
+If two declarations have the same specificity and importance, the last declared rule in the CSS file will be applied.
+The cascade is a core CSS concept that resolves conflicts by following a structured order: importance → specificity → source order. Understanding this helps in writing efficient and predictable CSS.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is Inheritance in CSS?
+- Inheritance is a CSS mechanism that allows certain properties to be automatically passed down from a parent element to its child elements. This helps maintain consistency and reduces redundant styling.
+
+How Inheritance Works?
+Not all CSS properties are inherited. Inheritance mainly applies to text-related properties, while box-related properties do not inherit by default.
+1. Properties That Are Inherited :- The following properties are inherited by default because they are related to text styling :
+color,font,visibility,letter-spacing,word-spacing,direction,cursor,line-height
+
+2. Properties That Are Not Inherited :- Other properties (like box model and layout properties) are not inherited by default :
+width,height,margin, padding,border,background,display,flex, grid,input,button etc.
+
+3. Forcing Inheritance :- To control inheritance behavior, we can use these values:
+inherit → Forces an element to inherit a property from its parent. input { background-color : inherit ; }
+initial → Resets the property to its browser default.
+unset → Behaves like inherit for inheritable properties and initial for non-inheritable ones.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Box-Model in CSS :-
+1.Height : By default it is 100px
+2.Width
+3.Border : border-width,border-style,border-color so use border shorthand for using all it in a single line such as width|style|color as div{ border: 2px solid blue; }
+4.Padding : The gap between inner box and outside box or the gap between border and content. padding-left,padding-right,padding-top,padding-bottom
+Padding Shorthand : 1.For all sides ( padding : 5px )
+                    2. top&bottom | left&right ( padding : 1px 2px)
+                    3. top|left&right|bottom ( padding : 1px 2px 3px)
+                    4.clockwise:top|right|bottom|left ( padding : 1px 2px 3px 4px)
+5.Margin : The distance between 2 individual boxes or To set spacing on outside the border.(margin-left,margin-right,margin-top,margin-bottom)
+Margin Shorthand is same as Padding Shorthand
+6.Border-sides : To control an individual side of the box. (border-left,border-right,border-top,border-bottom) such as border-left-color : blue;
+7.Border-radius : Used to round the corners of an element's outer border edge. div { border-radius : 15px ; } div{ border-radius : 50% } border-top-right-radius : 50px;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Block elements : Takes up the full-width available(whole block) which starts from the new line always
+                 Will respect width and height properties. 
+                 Horizontal and vertical margins both work.
+Inline elements : Takes up only necessary width which don't start from the new line.
+                  Margins will work horizontally but not vertically.
+                  Padding works on all sides but the top and bottom may overlap other elements.
+Display element : It sets whether an element is treated to be as inline element or a block element and the layout used for its children. such as display: inline or display: block;
+while using display element in the span tag it ignores the height and width given by the user. while the padding is set only on left and right but the content must overlap on top and bottom.
+When the property of display:inline is used in the unordered lists then the bullet points also disappear in a way to override the default settings with our CSS.
+
+The CSS property display: inline-block; specifies that an element behaves like an inline element while retaining the ability to set width and height like a block element.
+Key Features of inline-block :
+-Respects Width & Height: Unlike inline, you can set width, height, padding, and margin properly.
+-Stays Inline: Unlike block, it does not break onto a new line and remains in the same line as other inline elements.
+-Allows Side-by-Side Elements: Since it behaves like an inline element, multiple inline-block elements can be placed next to each other.
+-Respects Vertical Alignment: You can use vertical-align to control positioning.
+
+What display:none represents in CSS?
+In CSS, display: none; is a property that completely hides an element from the page. When an element has display: none;, it:
+-Removes the element from the document flow – The element is not visible and does not take up any space on the page.
+-Differs from visibility: hidden; – While visibility: hidden; hides the element but keeps it in the layout (still taking up space), display: none; removes it entirely.
+
+1rem = 16px and 1em = 16px 
+em is relative to the font size of its parent element.Useful for scaling elements proportionally but can lead to compounding effects when nested.
+rem stands for "root em" and is relative to the root (<html>) font size, not the parent element.Prevents the compounding (or snowball) effect that happens with em.
+Snowball effect of em vs. rem: When em is used in nested elements, the size multiplies at each level. This can cause unwanted scaling.
+
+Alpha Channel:Sets the opacity of the color which always ranges from 0 to 1 and in hexadecimal from 00 to ff rgba(255,255,255,0.3)
+CSS Transitions : It enable you to define the transition between two states of an element. (transition or transition-duration : 2s)
+Transition Shorthand : property name|duration|timing-function|delay : margin-top 2s ease-in-out 0.2s
+transition-timing-function
+CSS Transform : This property lets you rotate,scale-skew or translate an element. transform : rotate(45deg)(always cw if +ve);
+transform:scale(2,0.5) for x and y direction and transform:scaleX(0.5) only for x direction. also in 3d direction but tranlate doesn't. 
+skew() : Tilts (shears) an element along the X and/or Y axis. When used together, translate moves the element, while skew distorts it at an angle.
+Example: transform: translate(50px, 20px) skew(20deg, 10deg);
+First, the element moves 50px right and 20px down.
+Then, it skews 20 degrees horizontally and 10 degrees vertically.
+Box-shadow : It adds shadow effects around an element's frame. box-shadow:2px 2px 10px green; where first (2 px)'s are x and y offset and 10px is the blurred radius.
+Background-image : Sets an image as an background.
+background-image : url(" "); background-size : contain|cover|auto; 
+1.contain : The image is resized to fit inside the container while maintaining its aspect ratio.
+It ensures the entire image is visible, but this may leave empty space (gaps) if the container's dimensions do not match the image's proportions.
+Example:background-size: contain;
+📌 Use Case: When you want the whole image to be visible without distortion, even if it leaves some blank areas.
+2.cover : The image is resized to completely cover the container while maintaining its aspect ratio.
+Some parts of the image might be cropped if the container's aspect ratio is different from the image.
+Example:background-size: cover;
+📌 Use Case: When you want to fill the entire background without gaps, even if it means cropping parts of the image.
+3.auto (Default) : The image keeps its original size unless other background properties (like background-repeat) modify its appearance.
+Example:background-size: auto; (in this the image gets stretched and blurred)
+📌 Use Case: When you want the image to display at its natural size without scaling.
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+1️⃣ static (Default)
+The element follows the normal document flow.
+It is positioned according to the order in which it appears in the HTML.
+No effect of top, bottom, left, right properties.
+Example:.element {
+  position: static;
+  top: 50px;  /* ❌ No effect */
+  left: 20px; /* ❌ No effect */
+}
+📌 Use Case: Default positioning when you don’t need custom placement.
+2️⃣ relative
+The element remains in the normal document flow.
+However, you can move it using top, right, bottom, and left.
+The movement is relative to its original position.
+Example:.element {
+  position: relative;
+  top: 20px;  /* Moves 20px down from its original place */
+  left: 30px; /* Moves 30px right from its original place */
+}
+📌 Use Case: Adjusting an element slightly without affecting surrounding elements.
+3️⃣ absolute
+The element is removed from the normal document flow.
+Positioned relative to the nearest positioned ancestor (relative, absolute, fixed).
+If no positioned ancestor exists, it’s placed relative to <html> (the document itself).
+Example: .container {
+  position: relative; /* Parent element */
+}
+.element {
+  position: absolute;
+  top: 50px;   /* 50px from the top of .container */
+  left: 100px; /* 100px from the left of .container */
+}
+📌 Use Case: Creating tooltips, dropdowns, popups, or elements that float inside a specific container.
+4️⃣ fixed
+The element is removed from the normal document flow.
+It is positioned relative to the viewport (browser window).
+Stays in place even when scrolling.
+Example:.element {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 50px;
+  background: red;
+}
+📌 Use Case: Sticky headers, floating chat buttons, or back-to-top buttons.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Flexbox:Flexible box Layout is a 1d layout method for arranging items in rows or columns.It is a layout model that provides an efficient way to align and distribute space among items in a
+container, even when their sizes are dynamic. It is useful for creating responsive designs.The axis in the direction of row is the main axis of the flex model and another one is the cross axis.
+Flex Container: The parent element that holds flex items.
+Flex Items: The child elements inside the flex container.
+
+The role of display: flex in CSS is to enable the Flexbox layout model for a container, making it possible to control the alignment, spacing, and positioning of its child elements
+(known as flex items) in a flexible and dynamic way.When you apply display: flex to a container: The container becomes a flex container.The child elements inside the container become flex items.
+The flex items are laid out according to Flexbox rules, allowing you to easily control their positioning along both horizontal and vertical axes.By-default the direction is in the form of row(
+by-default).In summary, display: flex sets the foundation for using Flexbox to create responsive, flexible layouts with simple syntax and powerful alignment and distribution features.
+Flex Direction: By default, Flexbox arranges items horizontally (row-wise). However, you can change this using flex-direction to arrange items vertically (column-wise).
+It sets how flex items are placed in the flex container along which axis and direction.
+ flex-direction: row (default, items are placed horizontally). (main axis : left to right)
+ flex-direction:row-reverse;(main axis:right to left)
+ flex-direction:column-reverse;(main axis:bottom to top)
+ flex-direction: column (items are placed vertically).(main-axis:top to bottom)
+
+Justify-content:Tells how the browser distributes space between and around content items along the main-axis.
+ justify-content: flex-start : Aligns the flex items to the start of the container along the main axis.
+                               For a row layout (flex-direction: row), this means the items will be aligned to the left.
+                               For a column layout (flex-direction: column), this means the items will be aligned to the top.
+justify-content:flex-end : Aligns the flex items to the end of the container along the main axis.
+                           For a row layout, this means the items will be aligned to the right.
+                           For a column layout, this means the items will be aligned to the bottom.
+
+justify-content:center : Aligns the flex items in the center of the container along the main axis.
+                         For a row layout, this means the items will be centered horizontally.
+                         For a column layout, this means the items will be centered vertically.
+justify-content: space-between : It is a value for the justify-content property in Flexbox that distributes flex items along the main axis with equal space between them, 
+                                 but no space at the start or end of the container.Items will be spread out across the container, with equal spacing between them.
+                                 The first and last items will be aligned with the container's edges, and the items in between will have equal spacing. What it Does:
+It places the first item at the start of the container and the last item at the end.
+The remaining items are spaced out evenly between the first and last items, with no space at the container's edges.
+
+justify-content: space-around is a value for the justify-content property in Flexbox that distributes flex items along the main axis with equal space around each item.
+What it Does:
+It places equal space before the first item and after the last item, as well as equal space between each adjacent item. In this the area of space is halved.
+The spacing between the items is the same on both sides of each item, so there is a space before the first item and after the last item.
+Visual Summary:
+Even spacing around all items.If there are N items, the space between each item is equal, and there is also an equal space at the edges of the container.
+
+justify-content: space-evenly is a value for the justify-content property in Flexbox that distributes flex items along the main axis with equal space between all items, including the edges of the container.
+What it Does:
+It ensures equal space between each item, as well as equal space between the first item and the start of the container and the last item and the end of the container.
+Unlike space-around, which leaves space on either side of each item, space-evenly ensures that the space between the items and the edges of the container is the same.
+Visual Summary:
+Evenly distributed spacing between each item and around the container's edges.
+There is no extra space at the start or end of the container, as the spacing is uniform.
+
+The flex-wrap property in Flexbox controls whether the flex items should wrap onto multiple lines or stay in a single line when there's not enough space in the flex container.
+Here are the three possible values for flex-wrap:
+1. flex-wrap: nowrap ( By- Default)
+No wrapping: This is the default value. It ensures that the flex items do not wrap and stay on a single line, even if the container is not wide enough to accommodate them all.
+If the items overflow the container, they will be forced into the same line and may be cut off or cause horizontal scrolling.
+2. flex-wrap: wrap
+Wrap items onto multiple lines: With wrap, the flex items will wrap onto the next line if there's not enough space in the container. The items will stack vertically or horizontally, depending on the flex container's direction.
+Items will take up the remaining space on the new line and wrap from left to right (or top to bottom, in the case of a column layout).
+3.3. flex-wrap: wrap-reverse
+Wrap items in reverse order: This works similarly to wrap, but the items will be wrapped in the opposite direction. For instance, if the flex direction is a row, the new lines will appear above the previous lines rather than below.
+This can be useful when you want the wrapping to happen in the opposite direction of the default.
+nowrap: Items stay in a single line, causing overflow if necessary.
+wrap: Items wrap onto the next line(s) when there's not enough space.
+wrap-reverse: Items wrap onto the next line(s) in reverse order (opposite direction of wrap).
+These values make it easier to create responsive layouts that adapt based on the available space in the container.
+The align-items property in CSS is used to align the flex items along the cross axis (perpendicular to the main axis). 
+It defines how the items are positioned within the container in the vertical direction (when the flex direction is row, the default) or horizontal direction
+(when the flex direction is column).It also contains flex-start,flex-end and center.
+flex-start: Items align to the top of the container.
+flex-end: Items align to the bottom of the container.
+center: Items are centered vertically within the container.
+These values allow you to control the vertical or horizontal alignment of the flex items inside the container, depending on the layout direction.
+align-items: baseline is a value for the align-items property in CSS Flexbox that aligns the flex items along their baseline.
+What is a Baseline?
+The baseline of an item is typically the line on which text sits. For non-text elements, it's usually the bottom of the item’s box or where the content would typically "sit" within the item.
+What it Does: all the texts come at the same line.
+With align-items: baseline, the flex items are aligned such that their baselines are aligned across the container. This is especially useful for aligning text or elements that have different heights, ensuring that the text across the flex items lines up correctly.
+The baseline of an element can differ if the element has different content sizes, but this rule ensures a clean visual alignment of the text or the primary content.
+The align-content property in CSS Flexbox is used to align multiple lines of flex items within a flex container along the cross axis (perpendicular to the main axis). It is effective only when there are multiple lines of flex items, 
+which happens when the items wrap onto different lines due to the flex-wrap: wrap property.
+If the flex items are all on a single line, align-content will have no effect. It's primarily useful for controlling the space between rows (when flex items wrap) in a multi-line flex container. The align-content works the same as justify-content.
+
+The align-self property in CSS Flexbox allows you to override the default alignment of individual flex items along the cross axis (perpendicular to the main axis). It is used to align a single item differently from the other flex items in the container, without affecting the alignment of the other items.
+While align-items is used to align all flex items within the container, align-self lets you control the alignment of a specific flex item within that container.
+Values of align-self:
+align-self: auto (default): The flex item will use the alignment value specified by the align-items property on the container (if any).
+If align-items is not defined, it behaves as stretch by default.
+Example: .item {
+    align-self: auto;
+}
+align-self: flex-start: Aligns the flex item to the start of the container along the cross axis.
+For a row layout (flex-direction: row), this will align the item at the top.
+For a column layout (flex-direction: column), this will align the item at the left.
+Example: .item {
+    align-self: flex-start;
+}
+align-self: flex-end: Aligns the flex item to the end of the container along the cross axis.
+For a row layout, this will align the item at the bottom.
+For a column layout, this will align the item at the right.
+Example: .item {
+    align-self: flex-end;
+}
+align-self: center: Aligns the flex item in the center of the container along the cross axis.
+For a row layout, this will center the item vertically.
+For a column layout, this will center the item horizontally.
+Example: .item {
+    align-self: center;
+}
+align-self: stretch:Stretches the flex item to fill the entire height of the container along the cross axis (if the container is tall enough).
+For a row layout, the item will stretch vertically to fill the container.
+For a column layout, the item will stretch horizontally to fill the container.
+Example: .item {
+    align-self: stretch;
+}
+align-self: baseline: Aligns the flex item along its baseline with the other items, just like align-items: baseline would do for all items.
+Useful when aligning text elements or items with different heights, ensuring the text across all items is aligned along the same baseline.
+Example: .item {
+    align-self: baseline;
+}
+
+Flex-Sizing : It sets the initial main-size of a flex item. In CSS Flexbox, flex-sizing refers to how flex items are sized and how they grow, shrink, or maintain their size within a flex container. While there isn’t a property specifically named flex-sizing, the sizing of flex items is controlled through a combination of the following properties:
+
+flex: A shorthand property that sets how a flex item should grow, shrink, and what its base size should be. It combines three properties:
+flex-grow
+flex-shrink
+flex-basis
+flex-grow: Defines how much a flex item will grow relative to the other items in the container when there is available space. 
+The default value is 0, which means it won’t grow unless specified.
+
+flex-shrink: Defines how much a flex item will shrink relative to the other items in the container when there is not enough space. The default value is 1, meaning it will shrink if necessary.
+
+flex-basis: Sets the initial size of a flex item before any available space is distributed. It can be a specific length (like 100px) or auto (the item's natural size based on its content).
+
+Shorthand flex Property:
+The flex property is a shorthand for setting all three of the properties: flex-grow, flex-shrink, and flex-basis.
+flex: <flex-grow> <flex-shrink> <flex-basis>;
+Where:flex-grow is the factor by which the item can grow (default is 0).flex-shrink is the factor by which the item can shrink (default is 1). flex-basis defines the initial size of the item (default is auto).
+flex : <flex-grow> <flex-basis>;
+flex:flex-grow(unitless);
+flex:flex-basis px;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+What Does margin: 0 auto; Do in CSS?
+The CSS property margin: 0 auto; is commonly used to center block-level elements horizontally within their container.
+How It Works:
+0 → Sets top and bottom margins to 0.
+auto → Automatically calculates equal left and right margins, centering the element horizontally.
+Works only when the element has a defined width.
+.container {
+    width: 50%;  /* Necessary for centering */
+    margin: 0 auto;
+    background-color: lightblue;
+    text-align: center;
+}
