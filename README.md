@@ -42,5 +42,5 @@ Provide useful resources (external links) that your users can refer to for addit
 
 ---
 
-## ❤️ Made with love by [Stuti Gupta](https://www.linkedin.com/in/stuticoder1/)
+## Made with ❤️ by [Stuti Gupta](https://www.linkedin.com/in/stuticoder1/)
 Feel free to dive in and start building! If you find this repository helpful, consider giving it a ⭐️ and sharing it with others and plzz do follow me for better such notes.
