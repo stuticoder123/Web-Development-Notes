@@ -1,67 +1,134 @@
-Using Paragraph,Heading,Anchor Tags,Image tags with height and width,Boilerplate code,br tag,adding comments(<!-- comments -->)(using by ctrl + forward slash) to print actual heart symbol(&hearts;)(&#9829). 
-HTML entities are pieces of text that begin with an ampersand (&) and end with a semicolon (;). They are used to display reserved characters or invisible characters like non-breaking spaces. 
-Entities can also be used in place of characters that are difficult to type with a standard keyboard. For example, the entity for the copyright symbol (©) is ©.
-Division element to group elements which used to separate the tag which not belong to that particular group which contains all the information in different lines.
-Span element works the same as Div element but Span element contains all the information in a single line.
-Hr tag(Horizontal rule line element)
-Sub and Sup tags for Subscript and Superscript'
-Semantic Markup tags(relate to the meaning of the content) :
-->meaningful/structured layout
--> SEO friendly
-->readable for every users
-->improves user experience
-To print less than symbol(&lt;),for spaces(&nbsp;),for double inverted commas(&quot;),for ampersand(&amp;),for star(&bigstar;)(unicode of U02605 : &#9733 because 2605 is a decimal number)) Copyright(&copy;),trademark symbol(&reg;)
-Emmet Abbreviation used for easy coding :
-1.Child : > (nav > ul > li which means li is a child of ul and ul is a child of nav)
-2.Sibling : + (p > div + img which means div and img is a child of p tag and div & img are siblings of each other)
-3.Multiplication : To multiply one tag many times so that it will be easy for the users to write the code fastly (ul > li*5 which means to write li tag in ul tag 5 times)
-making table (<table border = "black">)
-4.Item numbering : ul>li.item$*5
-<ul>
-    <li class="item1"></li>
-    <li class="item2"></li>
-    <li class="item3"></li>
-    <li class="item4"></li>
-    <li class="item5"></li>
-</ul>
-Table has 3 parts :
-1.Table header
-2.Table body
-3.Table footer
-Colspan & Rowspan Attributes(Used to create cells which sis occupying over multiple rows or columns)
-Forms are used to collect the data from the user.Some terms of form are as follows : 
-1.Action Attribute : It is used to define what action needs to be performed when a form is submitted or where the form data should be sent.
-<form action = "/action.php">
-<form action = "/action">
-2.Input element : Used to create multiple form elements .
-                  There are multiple types of inputs that can be created using type attribute.(<input/>
-3.Placeholder Attribute : <input type = "text" placeholder = "Enter Name">
-4.Label element : It represents a caption for an item in a user interface which helps to highlight the box
-<label>
-Enter your username :
-<input type = "text" placeholder = "username">
-</label>
--------------------------------------------------------------------------------------------------------------
-<label for="username">Enter your username : </label>
-<input type = "text" id = "Username" placeholder = "Username" name = "Username"> (where id is a unique name element)
-5.Button Element : <button> Submit </button> (It is must to define button element in the form because it is not defined outside the form)
-Making a button using input : <input type="submit"> or <input type = "submit" value = "Submit your details">
-To search something on Google :  <form action = "https://www.google.com/search">
-        <input type = "text" name = "q" placeholder = "Search in Google"/>
-        <button>Search</button>
-   </form>
-Checkbox : <input type = "checkbox" name = "age" id = "age" checked/> (Here checked means that the checkbox is already ticked.) after which age = on is passed in the final result link.
-           <label for = "age"> I am 18+ </label>
-Radio button : <input type = "radio" name = "fruit" id = "apple" "value = "apple"/> (here url will become age = on & fruit = mango)
-                <label for = "apple">Apple </label> (only 1 radio button is filled if name attribute of each radio button is same) 
-6.Select element : To make a dropdown button
-<div>
-Choose your profession :
-<select name ="profession" id = "Profession">
-  <option> Select your option </option>
-  <option value = "student">Student </option>
-  <option value = "dev">Developer </option>
-</select>
-7.Range element : step for step wise increment and value attribute for pre - assigning it to the exact value
-</div>  (Profession = dev) try to write value = "dev" selected > for pre-selection
-8.Text area for message box
+--HTML Notes--
+### HTML Entities:
+HTML entities represent special characters that cannot be typed easily using a standard keyboard. They start with an ampersand (`&`) and end with a semicolon (`;`). For example:
+- `&hearts;` → ♥ (Heart symbol)
+- `&#9829;` → ♥ (Heart symbol)
+- `&lt;` → < (Less than symbol)
+- `&nbsp;` → (Space)
+- `&quot;` → " (Double quotes)
+- `&amp;` → & (Ampersand)
+- `&#9733;` → ★ (Star symbol)
+
+Entities also allow us to print symbols like the copyright symbol (`&copy;`) and registered trademark symbol (`&reg;`).
+
+### Division (`<div>`) and Span (`<span>`):
+- `<div>` is used to group elements together and is useful for separating content that belongs to different sections.
+- `<span>` is similar but works inline (all content stays in a single line).
+
+### Horizontal Rule (`<hr>`) and Comments:
+- `<hr>` adds a horizontal line across the page.
+- Comments in HTML are written between `<!--` and `-->`. These comments don’t appear on the webpage but are useful for notes or instructions.
+
+### Subscript and Superscript (`<sub>`, `<sup>`):
+- Use `<sub>` for subscript (e.g., H₂O) and `<sup>` for superscript (e.g., x²).
+
+### Semantic HTML:
+Semantic tags are used to structure content meaningfully. They are:
+- **SEO-friendly** (good for search engines)
+- **Readable for users**
+- **Improve user experience**
+
+### Emmet Abbreviations:
+Emmet helps write HTML code faster with shortcuts:
+1. **Child (`>`):** Used to define elements inside another. Example: `nav > ul > li` means `<li>` is inside `<ul>`, and `<ul>` is inside `<nav>`.
+2. **Sibling (`+`):** Defines sibling elements. Example: `p > div + img` means `<div>` and `<img>` are siblings inside `<p>`.
+3. **Multiplication (`*`):** Creates multiple elements quickly. Example: `ul > li*5` creates 5 `<li>` elements inside `<ul>`.
+4. **Item Numbering:** `ul > li.item$*5` creates 5 `<li>` elements with numbered classes (`item1`, `item2`, etc.).
+
+### Tables:
+A table consists of three parts:
+1. **Table Header**
+2. **Table Body**
+3. **Table Footer**
+
+- **Colspan and Rowspan**: These are used to merge cells across columns or rows.
+
+### Forms:
+Forms are used to collect user data. Some important form elements:
+1. **Action attribute:** Defines the action to take when the form is submitted.
+   - Example: `<form action="/submit">`
+2. **Input elements:** Used to create form fields (e.g., text, checkboxes, radio buttons).
+   - Example: `<input type="text" placeholder="Enter your name">`
+3. **Label element:** Provides a caption for form fields.
+   - Example: `<label for="username">Enter username:</label><input type="text" id="username">`
+4. **Button element:** Defines a button to submit the form.
+   - Example: `<button type="submit">Submit</button>`
+5. **Checkbox:** A box the user can check or uncheck.
+   - Example: `<input type="checkbox" id="age" checked/>`
+   - When the form is submitted, the value `age=on` will be passed if the checkbox is checked.
+6. **Radio button:** Allows the user to select one option from multiple choices. All radio buttons with the same `name` attribute are grouped together.
+   - Example: `<input type="radio" name="fruit" id="apple" value="apple"/>`
+   - In the form submission, the selected radio button's value will be sent (e.g., `fruit=apple`).
+   - Only one radio button can be selected at a time when they share the same `name` attribute.
+7. **Select element (Dropdown):** Allows the user to choose an option from a list.
+   - Example:
+     ```html
+     <select name="profession">
+         <option value="student">Student</option>
+         <option value="developer">Developer</option>
+     </select>
+     ```
+   - **Pre-selection:** To pre-select an option, use the `selected` attribute:
+     ```html
+     <select name="profession">
+         <option value="student">Student</option>
+         <option value="developer" selected>Developer</option>
+     </select>
+     ```
+8. **Range element:** Allows users to select a range, like a slider.
+   - Example: `<input type="range" min="1" max="10" step="1">`
+9. **Text Area:** Allows users to enter longer text (like a message or comments).
+   - Example: 
+     ```html
+     <textarea placeholder="Enter your message here"></textarea>
+     ```
+
+### Button Elements:
+- `<button>` defines a button inside a form to submit or perform an action.
+  ```html
+  <button>Submit</button>
+  ```
+- You must define the button inside the form because if defined outside, it will not work as expected.
+  
+- To create a button using the `<input>` element:
+  ```html
+  <input type="submit">
+  ```
+  or you can customize the text:
+  ```html
+  <input type="submit" value="Submit your details">
+  ```
+
+- To search something on Google:
+  ```html
+  <form action="https://www.google.com/search">
+    <input type="text" name="q" placeholder="Search in Google"/>
+    <button>Search</button>
+  </form>
+  ```
+
+### Checkbox:
+- A checkbox allows the user to select an option. If the checkbox is checked by default, use the `checked` attribute.
+  ```html
+  <input type="checkbox" name="age" id="age" checked/>
+  <label for="age">I am 18+</label>
+  ```
+  When the form is submitted, the value `age=on` will be passed if the checkbox is checked.
+
+### Radio Button:
+- A radio button allows the user to select only one option from a set of choices. All radio buttons with the same `name` attribute are grouped together.
+  ```html
+  <input type="radio" name="fruit" id="apple" value="apple"/>
+  <label for="apple">Apple</label>
+  ```
+  In the form submission, the selected radio button's value will be sent (e.g., `fruit=apple`).
+  - Only one radio button can be selected at a time when they share the same `name` attribute.
+
+### Span Element:
+- The `<span>` element is an inline element, meaning it doesn’t break the flow of text and stays on the same line with other elements.
+  ```html
+  <span>This text is inline with other content.</span>
+  ```
+
+--The End--
+
