@@ -1,4 +1,4 @@
---HTML Notes--
+                                                               --HTML Notes--
 ### HTML Entities:
 HTML entities represent special characters that cannot be typed easily using a standard keyboard. They start with an ampersand (`&`) and end with a semicolon (`;`). For example:
 - `&hearts;` → ♥ (Heart symbol)
