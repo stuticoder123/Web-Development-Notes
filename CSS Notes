@@ -542,3 +542,7 @@ Example : .box1 {
   left: 100px;
   z-index: 2; /* Higher stack level, appears on top */
 }
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+In CSS, height: 100vh means that the element will take up 100% of the viewport height.
+vh stands for viewport height, where 1vh is equal to 1% of the total height of the viewport (the visible screen area in the browser).
+So, 100vh makes the element as tall as the full height of the screen, regardless of the content inside it.
