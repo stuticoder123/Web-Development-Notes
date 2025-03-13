@@ -1,3 +1,4 @@
+                                                                        ---CSS Notes---
 CSS Overview : Cascading Style Sheets (CSS) is used to style the visual presentation of HTML documents, such as text colors, layout, and background styling.
 
 Basic CSS Syntax: h1 {
@@ -182,11 +183,8 @@ transition: margin-top 2s ease-in-out 0.2s;
 transform: rotate(45deg); /* Clockwise rotation */
 transform: scale(2, 0.5); /* Scale: 2x width, 0.5x height */
 transform: translate(50px, 20px) skew(20deg, 10deg);  /* Moves element, then skews */
-*6. `box-shadow` (Shadow Effects) :  
-```css
-box-shadow: 2px 2px 10px green;  /* X-offset | Y-offset | Blur radius | Color */
+6. `box-shadow` (Shadow Effects) :  box-shadow: 2px 2px 10px green;  /* X-offset | Y-offset | Blur radius | Color */
 7. `background-image` (Setting Background Images) 
-```css
 background-image: url("image.jpg");
 background-size: contain | cover | auto;
 - `contain` → Fits the image inside the container **without cropping** (may leave gaps).  
@@ -234,7 +232,7 @@ Key Concepts : - Flex Container : The parent element that holds the flex items.
                - Main Axis : The axis along which flex items are arranged (by default, horizontally).
                - Cross Axis : The axis perpendicular to the main axis (by default, vertically).
 Display: flex  - Enables Flexbox : Applies the Flexbox layout model to the container, making its children flexible.  
-               - Default Direction : Items are arranged in a row (horizontal).  
+               - By - Default Direction : Items are arranged in a row (horizontal).  
 - Syntax :  
   ```css
   .container { display: flex; }
@@ -306,4 +304,241 @@ Example : This will center `.container` horizontally within its parent.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Grid : 
+Grid : Setting an element's display property to grid makes all its direct children grid items.
+.container {
+  display: grid;
+}
+display : grid is by-default in column format where the spacing is equal among all the grid items.
+Grid Model in CSS : The CSS Grid Model consists of several key components:
+Grid Lines : The dividing lines that separate grid cells.They can be horizontal (row lines) or vertical (column lines) and are used to position items explicitly using grid-row-start, grid-column-start, etc.
+Grid Cell : The smallest unit in a grid, formed by the intersection of a row and a column.Similar to a table cell but more flexible.
+Grid Track : The space between two adjacent grid lines.It can be either a row track (between two row lines) or a column track (between two column lines).
+Grid Template in CSS : The `grid-template` properties define the structure of a grid by specifying **grid lines** and **track sizing**.  
+1. `grid-template-rows`:   - Defines the height of each row in a grid.  
+                           - The values represent the size of each row.  
+Example :   
+```css
+.container {
+  display: grid;
+  grid-template-rows: 100px 200px auto;
+}
+- The first row is 100px tall.  
+- The second row is 200px tall.  
+- The third row takes up the remaining available space (`auto`).  
+2. `grid-template-columns` :   - Defines the width of each column in a grid.  
+                               - The values represent the size of each column.  
+Example :  
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+- The first column takes 1 fraction of the available space.  
+- The second column takes 2 fractions (twice as large as the first).  
+- The third column takes 1 fraction of the space.  
+`grid-template-rows: repeat()` in CSS Grid : The `repeat()` function in `grid-template-rows` allows you to create rows with a repeating pattern, reducing redundancy in code.  
+Syntax : grid-template-rows: repeat(number_of_times, row_size);
+Examples :  1. Equal-sized Rows :- Creates 3 rows, each 100px tall. 
+.container {
+  display: grid;
+  grid-template-rows: repeat(3, 100px); or 100px 100px 100px;
+} 
+2. Auto-Sized Rows :- Creates 4 rows, where each row adjusts its height based on content.
+.container {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+}
+3. Mixed Row Sizes :- Creates 2 rows of 100px, followed by 1 row of 200px. 
+.container {
+  display: grid;
+  grid-template-rows: repeat(2, 100px) 200px;
+}
+4. Using `fr` (Fractional Units) :- Creates 3 rows that share the available space equally.  
+.container {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+`grid-template-columns: repeat()` in CSS Grid :   
+The `repeat()` function in `grid-template-columns` works similarly to `grid-template-rows`, allowing you to define column patterns efficiently.  
+Syntax : grid-template-columns: repeat(number_of_times, column_size);
+Examples :  1. Equal-Sized Columns :- Creates 3 columns, each 150px wide.  
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+}
+2. Auto-Sized Columns :- Creates 4 columns, where each column adjusts its width based on content.
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+}
+3. Mixed Column Sizes :- Creates 2 columns of 100px, followed by 1 column of 200px.   
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 100px) 200px;
+}
+4. Using `fr` (Fractional Units) :- Creates 3 columns that share the available space equally.    
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+5. Responsive Layout with `minmax()` :- Creates columns that are at least 200px wide but expand to fit the available space.  
+                                      - `auto-fit` dynamically adjusts the number of columns based on the container's width.  
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+Grid Gaps in CSS (gap, row-gap, column-gap) : The grid gap properties in CSS are used to control the spacing between rows and columns in a grid layout.
+1. gap (Shorthand for row and column gaps) : Sets both row and column gaps in one declaration. grid-gap : row-gap | column-gap;
+2. row-gap : Defines the space between grid rows.
+3. column-gap : Defines the space between grid columns.
+
+Grid-column : In CSS Grid Layout, the `grid-column` property is used to define the starting and ending positions of an item within the grid columns. This property allows you to control how far across the grid the item will span, from which column it will start, to which column it will end.
+
+Here’s how it works: - grid-column-start : Defines where the item should start (which column line it will start from).
+                     - grid-column-end : Defines where the item should end (which column line it will end at).
+ Syntax : grid-column: start / end;
+- start : The line number (or line name) where the item should begin.
+- end : The line number (or line name) where the item should end.
+Example: .item {
+              grid-column: 2 / 4;
+            }
+In this example, the item will:
+- Start at the 2nd column line (the line between the second and third columns).
+- End at the 4th column line (the line between the fourth and fifth columns).
+In CSS Grid, the shorthand `grid-column: start_col / span number;` defines an item's position across columns :
+- start_col : The grid line where the item starts.
+- span number : How many columns the item should span from the starting line.
+Example : .item {
+              grid-column: 2 / span 3;
+                }
+- The item starts at the 2nd column line (between the 2nd and 3rd columns).
+- It spans 3 columns, covering columns 2, 3, and 4.
+This shorthand is useful for defining how many columns an item spans without specifying an explicit ending line.
+The grid-row works the same as grid-column but in the terms of rows instead of columns.
+Notes:- The `start` value is the column line where the grid item begins.
+      - The `end` value is the column line where the grid item ends.
+      - Grid lines are numbered, starting from 1 at the top-left corner.
+      - You can also use negative numbers to count lines from the end (e.g., `grid-column: -3 / -1;` would start 3 columns before the last column and end at the last column).
+      - This allows for a flexible and responsive layout in CSS Grid.
+
+In CSS Grid, the following properties are used to control the alignment and positioning of grid items within their respective grid cells and containers. Here’s a breakdown of common alignment properties in CSS Grid:
+1. justify-items :- Purpose : Aligns grid items along the horizontal (inline) axis (i.e., the row axis).
+                    Values : start: Aligns items to the start of the cell.
+                             end: Aligns items to the end of the cell.
+                             center: Aligns items to the center of the cell.
+                             stretch (default): Stretches items to fill the entire width of the cell.
+2. justify-self :- Purpose : Aligns a specific grid item along the horizontal (inline) axis inside its grid cell.
+                   Values : start: Aligns the item to the start of its cell.
+                            end: Aligns the item to the end of its cell.
+                            center: Aligns the item to the center of its cell.
+                            stretch (default): Stretches the item to fill the cell horizontally.
+3. align-items :- Purpose: Aligns grid items along the vertical (block) axis (i.e., the column axis).
+                  Values : start: Aligns items to the start of the cell (top).
+                           end: Aligns items to the end of the cell (bottom).
+                           center: Aligns items to the center of the cell.
+                           stretch (default): Stretches items to fill the entire height of the cell.
+4. align-self :- Purpose : Aligns a specific grid item along the vertical (block) axis inside its grid cell.
+                 Values : start: Aligns the item to the start of its cell (top).
+                          end: Aligns the item to the end of its cell (bottom).
+                          center: Aligns the item to the center of its cell.
+                          stretch (default): Stretches the item to fill the cell vertically.
+5. place-items :- Purpose : A shorthand property to set both justify-items and align-items in one declaration.
+                  Values : place-items: justify align;
+                  For example, place-items: center start; aligns items horizontally to the center and vertically to the start.
+6. place-self :- Purpose: A shorthand property to set both justify-self and align-self for a specific grid item.
+                 Values : place-self : justify align;
+                 For example, place-self: center end; aligns the item horizontally to the center and vertically to the end.
+The display: inline-grid; property in CSS is used to create a grid container that behaves like an inline element, meaning it will not break the flow of content and will take up only as 
+much width as necessary, rather than stretching across the full width of its parent container (which display: grid; would do).
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CSS Animations : To animate CSS elements.
+@keyframe animationName{
+              from{ font-size : 20px;}
+                to{font-size : 40px; }
+}
+1. animation-name : Specifies the name of the animation (defined using @keyframes).
+2. animation-duration : Defines how long the animation should take to complete.
+3. animation-timing-function : Controls the speed curve of the animation.
+Values: ease, linear, ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n).
+4. animation-delay : Delays the start of the animation.
+5. animation-iteration-count : Specifies how many times the animation should run.
+Values: infinite, 1, 2, 3, etc.
+6. animation-direction : Defines whether the animation should run in the normal direction, reverse, or alternate.
+Values : normal, reverse, alternate, alternate-reverse.
+Example :-         @keyframes bounce {
+                  0% { transform: translateY(0); }
+                  50% { transform: translateY(-50px); }
+                  100% { transform: translateY(0); }
+                      }
+
+                    div {
+                      animation-name: bounce;
+                      animation-duration: 2s;
+                      animation-timing-function: ease-in-out;
+                      animation-delay: 1s;
+                      animation-iteration-count: infinite;
+                      animation-direction: alternate;
+                    }
+Animation Shorthand : animation: animation-name|animation-duration|animation-timing-function|animation-delay|animation-iteration-count|animation-direction|animation-fill-mode|animation-play-state;
+In CSS animations, the percentage (%) in @keyframes defines the progress of the animation, specifying how the element should look at different points during the animation.
+How % Works in Animation?
+0% → Starting state (same as from)
+100% → Ending state (same as to)
+Intermediate percentages (25%, 50%, 75%) → Define key points in between
+For Example : @keyframes colorChange {
+              0% { background-color: red; }   /* Start */
+              50% { background-color: blue; }  /* Midway */
+              100% { background-color: green; } /* End */
+            }
+            
+            div {
+              width: 200px;
+              height: 100px;
+              animation: colorChange 3s infinite alternate;
+              }
+ Media Queries in CSS help create responsive websites by applying different styles based on screen size, resolution, or device type. This ensures that the website
+looks good on all devices—desktops, tablets, and mobiles.
+@media (max-width: 768px) {
+  body {
+    background-color: lightcoral;  /* For tablets and smaller devices */
+  }
+}
+
+@media (max-width: 480px) and {min-width:600px} {
+  body {
+    background-color: lightgreen;  /* For mobile screens */
+  }
+}
+@media (orientation:landscape) {
+  p {
+    font-size: 18px;  /* For screens 600px and larger */
+  }
+}
+z-index : It decides the stack level of elements.Overlapping elements with a larger z-index cover those with a smaller one.Only applied for z-index position static or default position.
+It controls the stack order of elements (which elements appear on top when they overlap).
+Elements with a higher z-index value appear in front of elements with a lower z-index.
+Works only when the element's position is relative, absolute, fixed, or sticky.
+Example : .box1 {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 1; /* Lower stack level */
+}
+
+.box2 {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  z-index: 2; /* Higher stack level, appears on top */
+}
