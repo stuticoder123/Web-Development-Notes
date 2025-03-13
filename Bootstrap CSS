@@ -1,0 +1,18 @@
+                                                      ---Bootstrap CSS---
+- Bootstrap is a CSS framework that provides a responsive, mobile-first toolkit for building websites quickly. It includes pre-designed components, flexible grid systems,
+and utility classes, making web development faster and easier. Bootstrap also supports JavaScript plugins, custom themes, and extensive documentation for seamless 
+integration.
+- Vanilla CSS refers to using plain, standard CSS without any frameworks, libraries, or preprocessors like Bootstrap, Tailwind, or SASS. It means writing pure CSS to 
+style web pages manually, giving full control over the design but requiring more effort compared to using a CSS framework.
+- Bootstrap works with Flexbox because it is built using CSS Flexbox as its core layout system. Bootstrap provides predefined flex utility classes that make it easier 
+to use Flexbox without writing custom CSS.
+- Bootstrap is a powerful feature-packed frontend toolkit through which we can build anything from prototype to production-in-minutes.
+Benefits of Bootsrap : 
+1.Makes development faster and easier.
+2.Good-choice of pre-built components.
+3.good browser compatibility
+ Bootstrap CDN link used in CSS : <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISsmA8HnxZtMeE+IAX7tq6i5bNJutNBeI/I4Bi/GzLsxEdf1cVZzS" crossorigin="anonymous">
+Bootstrap CDN link used in JavaScript : <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-vKz8e3xxkI5D3KfcWdYyVd+Zo6cK04hI0+cxCsmYW8TMDtW/Z/z6DkIWA9cqGpWJ" crossorigin="anonymous"></script>
+✅ Alternative Bootstrap CDN from Bootstrap's Official Website
+You can also get the latest CDN from Bootstrap's Official Website.
+These links ensure that your website always uses the latest Bootstrap 5.3.3 version without downloading files manually. 🚀
