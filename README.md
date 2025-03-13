@@ -8,7 +8,7 @@ Stay tuned as we dive into topics like HTML, CSS, JavaScript, React, and Tailwin
 ## 📚 Topics Covered in These Notes:
 
 - **[HTML](https://github.com/stuticoder123/Web-Development-/blob/main/HTML%20Notes)** : The building block of every webpage. Learn how to structure your content effectively!
-- **[CSS](https://github.com/stuticoder123/HTML-Web-Development-/edit/main/CSS%20Notes)** : Make your webpages stand out with styling techniques, animations, and layout systems.
+- **[CSS](https://github.com/stuticoder123/Web-Development-Notes/blob/main/CSS%20Notes)** : Make your webpages stand out with styling techniques, animations, and layout systems.
 - **[JavaScript](#javascript)** : Bring your website to life with interactivity, DOM manipulation, and dynamic content.
 - **[React](#react)**: Dive into one of the most powerful front-end libraries to build interactive UIs and components.
 - **[Tailwind CSS](#tailwind-css)**: Master this utility-first CSS framework for faster, cleaner, and more flexible styling.
