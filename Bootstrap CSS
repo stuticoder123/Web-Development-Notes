@@ -11,8 +11,123 @@ Benefits of Bootsrap :
 1.Makes development faster and easier.
 2.Good-choice of pre-built components.
 3.good browser compatibility
- Bootstrap CDN link used in CSS : <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISsmA8HnxZtMeE+IAX7tq6i5bNJutNBeI/I4Bi/GzLsxEdf1cVZzS" crossorigin="anonymous">
+Bootstrap CDN link used in CSS : <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISsmA8HnxZtMeE+IAX7tq6i5bNJutNBeI/I4Bi/GzLsxEdf1cVZzS" crossorigin="anonymous">
 Bootstrap CDN link used in JavaScript : <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-vKz8e3xxkI5D3KfcWdYyVd+Zo6cK04hI0+cxCsmYW8TMDtW/Z/z6DkIWA9cqGpWJ" crossorigin="anonymous"></script>
-✅ Alternative Bootstrap CDN from Bootstrap's Official Website
-You can also get the latest CDN from Bootstrap's Official Website.
+✅ Alternative Bootstrap CDN from Bootstrap's Official Website(https://getbootstrap.com/)
 These links ensure that your website always uses the latest Bootstrap 5.3.3 version without downloading files manually. 🚀
+
+<meta charset="utf-8"> → Specifies UTF-8 encoding (supports special characters).
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+Makes the page responsive on different devices (mobile-friendly).
+width=device-width → Sets the width to match the device screen size.
+initial-scale=1 → Sets the initial zoom level.
+shrink-to-fit=no → Prevents automatic shrinking of the page on mobile.
+
+<button> → Creates a clickable button.
+type="button" → Specifies that it is a button (not a form submit button).
+class="btn btn-primary" → Uses Bootstrap classes to style the button as blue.
+id="hi" → Assigns an ID to the button for JavaScript interaction.
+class="alert alert-success" → Uses Bootstrap styles to make it a green success alert.
+role="alert" → Helps screen readers understand it's an alert message.
+id="alert-div" → Assigns an ID for JavaScript control.
+style="display:none;" → Hides the alert initially (it won't be visible until triggered).
+document.getElementById("hi") → Selects the button with id="hi".
+.addEventListener("click", function() {...}) → Attaches a click event listener to the button.
+document.getElementById("alert-div").style.display = "block"; → When the button is clicked, it changes the alert box’s display from "none" to "block", making it 
+visible.
+Expected Output :-
+1. Before Clicking the Button : 
+- You see "Hello, world!" and a blue button (Say Hi!).
+- The alert box is hidden.
+2. After Clicking the Button :
+- The alert box appears with the message:
+- ✅"Hello Stuti Gupta here!" (Green success alert).
+The code is :
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <button type="button" class="btn btn-primary" id="hi">Say Hi!</button>
+    <div class="alert alert-success" role="alert" id="alert-div" style="display:none;">
+      Hello Stuti Gupta here!
+    </div>
+    <!-- JavaScript to handle button click -->
+    <script>
+      document.getElementById("hi").addEventListener("click", function() {
+        document.getElementById("alert-div").style.display = "block";
+      });
+    </script>
+  </body>
+</html>
+
+<div class="container text-center mt-5">: This is a div element with three classes applied :
+container: A Bootstrap class that provides a responsive fixed-width container. It ensures that the content inside it is aligned properly and has appropriate padding.
+text-center: A Bootstrap class that centers the text (or other inline content like buttons) horizontally within the container.
+mt-5: A Bootstrap class that adds a top margin to the container. The "5" indicates the spacing size, and in Bootstrap, it corresponds to a spacing value based on the spacing scale (which is typically in rem or px).
+
+<button class="btn btn-primary">Click Me</button> : This is a button element with two classes applied :
+btn: A Bootstrap class that styles the button with default button styling.
+btn-primary: A Bootstrap class that applies the primary color theme to the button (usually blue by default).
+
+The code for printing a normal click me button
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button>Click me</button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+The Bootstrap code to generate a red click me alert button : but for green colored button replace the danger word by success 
+ <body>
+    <!-- Default button -->
+    <button>Click me</button>
+    <!-- Bootstrap styled button -->
+    <button class="btn btn-danger">Click me</button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+
+What will we cover in the Bootstrap?
+
+1. Components : pre-built and reusable piece of user interface (UI)
+            eg - button, forms
+
+2. Layouts : overall structure and arrangement of the elements
+          eg - container, grid
+
+Containers : They are a fundamental building block of Bootstrap that contain, pad, and align your content within a given device or viewport.
+Buttons : Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+<button type="button" class="btn btn-primary">Primary</button>    for blue colored button
+<button type="button" class="btn btn-secondary">Secondary</button>   for greyish colored button
+<button type="button" class="btn btn-success">Success</button>     for green colored button
+<button type="button" class="btn btn-danger">Danger</button>     for red colored button
+<button type="button" class="btn btn-warning">Warning</button>  for yellow colored button
+<button type="button" class="btn btn-info">Info</button>         for light bluish button
+<button type="button" class="btn btn-light">Light</button>        for non- colored button
+<button type="button" class="btn btn-dark">Dark</button>           for blackish colored button
+<button type="button" class="btn btn-link">Link</button>            for hyperlinked button with blue text and underlining
+Outline buttons : In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the .btn-outline-* 
+ones to remove all background images and colors on any button.
+For example : <button type="button" class="btn btn-outline-primary">Primary</button>
+For large sized buttons : <button type="button" class="btn btn-primary btn-lg">Large button</button>
+For small sized buttons : <button type="button" class="btn btn-primary btn-sm">Small button</button>
+Disabled state  : Make buttons look inactive by adding the disabled boolean attribute to any <button> element. Disabled buttons have pointer-events: none 
+applied to, preventing hover and active states from triggering.
+For example : <button type="button" class="btn btn-primary" disabled>Primary button</button>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Badges : Documentation and examples for badges, our small count and labeling component.
