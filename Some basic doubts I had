@@ -1,41 +1,24 @@
-# 🚀 AI Exam Center Platform
+Q.1)What is the role of ISP between Client and DNS in requesting a message to a desktop by an user?
+Ans.) - ✔ Provides the initial DNS resolution for domain names.
+        ✔ Routes the data packets between the client and the requested web server.
+        ✔ Ensures efficient and fast data transfer through its network infrastructure.
 
-An AI-powered exam platform where users can code in multiple languages, share video responses, and receive AI-based evaluations — built for secure and interactive online assessments.
+Q.2)Is video tag a semantic tag?
+Ans.) No, the <video> tag is not a semantic tag.Semantic tags, like <header>, <article>, <section>, and <footer>, give meaning to the content they contain, helping search engines and developers understand the page structure.
+The <video> tag, on the other hand, is a media element used to embed videos in a webpage. It defines functionality (playing video) rather than meaning.If you want a semantic wrapper for a video, you can place it inside a 
+<figure> tag with a <figcaption> to provide descriptive context.
+ <figure>
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>This is an explanatory video about AI.</figcaption>
+</figure>
 
-![Status](https://img.shields.io/badge/status-active-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
-![Contributions](https://img.shields.io/badge/contributions-welcome-orange)
-
----
-
-## 📌 Features
-
-- 👨‍💻 Multi-language code typing
-- 🎥 Video response recording and upload
-- 🤖 AI-based answer rating system
-- 🛡️ Secure browser environment
-- 📊 Real-time feedback and analytics
-
----
-
-## ⚙️ Tech Stack
-
-- **Frontend:** React.js, Tailwind CSS
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
-- **AI Engine:** Python (NLP & Scoring Models)
-
----
-
-## 🚀 Quick Start
-
-```bash
-# Clone the repo
-git clone https://github.com/yourusername/ai-exam-center.git
-
-# Install dependencies
-cd ai-exam-center
-npm install
-
-# Start the server
-npm start
+Q.3)Is figure tag a semantic tag?
+Ans.) Yes, the <figure> tag is a semantic tag in HTML.It is used to group media elements like images, illustrations, diagrams, videos, or code snippets, along with their captions. 
+The purpose of the <figure> tag is to provide meaningful context to the content, making it more understandable for both developers and search engines.
+<figure>
+  <img src="ai-robot.png" alt="AI-powered robot">
+  <figcaption>An AI-powered robot in action.</figcaption>
+</figure> How We can make attractive note for the readme.file And also add some link related and also add some readme file function.
