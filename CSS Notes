@@ -2,7 +2,7 @@
 CSS Overview : Cascading Style Sheets (CSS) is used to style the visual presentation of HTML documents, such as text colors, layout, and background styling.
 
 Basic CSS Syntax: h1 {
-  color: red; /* Property: color, Value: red */
+  color: red; / Property: color, Value: red /
 }
 - h1 is the selector.
 - color is the property.
@@ -28,7 +28,7 @@ Text Properties:-
 7. Font Family : font-family: Arial, sans-serif;
 8. Text Transform : text-transform: uppercase | lowercase | capitalize;
 9. Selectors :
-Universal Selector : * { property: value; }
+Universal Selector :  { property: value; }
 Element Selector : h1 { color: red; }   h1, h3 { color: red; }
 ID Selector : #idselector { color: red; }
 Class Selector : .myclass { property: value; } .class a { property: value; }
@@ -82,145 +82,145 @@ Understanding these rules helps in writing clear and predictable CSS styles.
 CSS Inheritance : It allows certain properties to be passed down from a parent element to its child elements, reducing redundant styling and maintaining consistency.  
 How Inheritance Works? : Not all CSS properties are inherited. Inheritance mostly applies to text-related properties, while box-related properties do not inherit by default.  
 1. Inherited Properties (Text-Related) :  These properties are inherited automatically :  
-- `color`, `font`, `visibility`, `letter-spacing`, `word-spacing`, `direction`, `cursor`, `line-height`  
+- color, font, visibility, letter-spacing, word-spacing, direction, cursor, line-height  
 2. Non-Inherited Properties (Box & Layout-Related) : By default, these properties are not inherited :  
-- `width`, `height`, `margin`, `padding`, `border`, `background`, `display`, `flex`, `grid`, `input`, `button`, etc.  
+- width, height, margin, padding, border, background, display, flex, grid, input, button, etc.  
 3. Forcing Inheritance : CSS provides special values to control inheritance:  
-- `inherit` → Forces an element to inherit the property from its parent.  
-  ```css
+- inherit → Forces an element to inherit the property from its parent.  
+  
   input { background-color: inherit; } 
-- `initial` → Resets the property to its default browser-defined value.  
-- `unset` → Acts as `inherit` for inheritable properties and `initial` for non-inheritable ones.  
+- initial → Resets the property to its default browser-defined value.  
+- unset → Acts as inherit for inheritable properties and initial for non-inheritable ones.  
 This mechanism helps streamline styling while giving flexibility where needed. 🚀
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-CSS Box Model : The Box Model in CSS defines how elements are structured and spaced, consisting of four key parts: **Content, Padding, Border, and Margin**.  
+CSS Box Model : The Box Model in CSS defines how elements are structured and spaced, consisting of four key parts: Content, Padding, Border, and Margin.  
 1. Height & Width :  
-- Height : Default is `100px` (unless overridden).  
+- Height : Default is 100px (unless overridden).  
 - Width : Defines the element's width.  
 2. Border : Defines the element's outline with properties:  
-- `border-width`, `border-style`, `border-color`  
+- border-width, border-style, border-color  
 - Shorthand : 
-  ```css
+  
   div { border: 2px solid blue; }
 3. Padding :   
 Spacing inside the border, between the content and the border.  
 - Shorthand : 
-  ```css
-  padding: 5px;          /* All sides */
-  padding: 1px 2px;      /* Top & Bottom | Left & Right */
-  padding: 1px 2px 3px;  /* Top | Left & Right | Bottom */
-  padding: 1px 2px 3px 4px; /* Top | Right | Bottom | Left */
+  
+  padding: 5px;          / All sides /
+  padding: 1px 2px;      / Top & Bottom | Left & Right /
+  padding: 1px 2px 3px;  / Top | Left & Right | Bottom /
+  padding: 1px 2px 3px 4px; / Top | Right | Bottom | Left /
 4. Margin
-Spacing **outside** the border, controlling the gap between elements.  
-- **Shorthand:** *(Same as padding shorthand)*  
+Spacing outside the border, controlling the gap between elements.  
+- Shorthand: (Same as padding shorthand)  
 5. Border Sides : To style specific sides:  
-```css
+
 border-left: 2px solid red;
 border-top-color: blue;
 6. Border Radius : Rounds the element's corners:  
-```css
-div { border-radius: 15px; } /* All corners */
-div { border-radius: 50%; }  /* Circular shape */
-div { border-top-right-radius: 50px; } /* Specific corner */
+
+div { border-radius: 15px; } / All corners /
+div { border-radius: 50%; }  / Circular shape /
+div { border-top-right-radius: 50px; } / Specific corner /
 🚀 The Box Model helps in structuring layouts effectively!
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
-CSS display properties : CSS defines how elements behave using **display properties**, categorizing them as **block**, **inline**, or **inline-block** elements.  
-1. Block Elements :   - Occupy the **full width** available and start on a **new line**.  
-                      - Respect `width` and `height` properties.  
-                      - Both **horizontal & vertical margins** work.  
-                      - Example: `<div>`, `<p>`, `<h1>`, `<section>`.  
+CSS display properties : CSS defines how elements behave using display properties, categorizing them as block, inline, or inline-block elements.  
+1. Block Elements :   - Occupy the full width available and start on a new line.  
+                      - Respect width and height properties.  
+                      - Both horizontal & vertical margins work.  
+                      - Example: <div>, <p>, <h1>, <section>.  
 
-2. Inline Elements :   - Occupy only the **necessary width** and do **not start a new line**.  
-                       - **Horizontal margins work**, but **vertical margins do not**.  
-                       - `padding` applies on all sides, but top/bottom padding **may overlap** other elements.  
-                       - Example: `<span>`, `<a>`, `<strong>`.  
+2. Inline Elements :   - Occupy only the necessary width and do not start a new line.  
+                       - Horizontal margins work, but vertical margins do not.  
+                       - padding applies on all sides, but top/bottom padding may overlap other elements.  
+                       - Example: <span>, <a>, <strong>.  
 
 3. Display Property : Controls how an element behaves in the layout:  
-```css
-display: block; /* Makes an element behave as a block */
-display: inline; /* Makes an element behave as an inline element */
-display: inline-block; /* Mix of both inline & block properties */
+
+display: block; / Makes an element behave as a block /
+display: inline; / Makes an element behave as an inline element /
+display: inline-block; / Mix of both inline & block properties /
 
                 Inline vs. Inline-Block
- Feature            `inline`         `inline-block` |
+ Feature            inline         inline-block |
 |------------------ --------------- ---------------|
 | Respects width/height | ❌ No | ✅ Yes |
 | Stays on the same line | ✅ Yes | ✅ Yes |
 | Allows padding & margin | ✅ (partial) | ✅ (full) |
 | Supports vertical alignment | ❌ No | ✅ Yes |
 
-4. Special Cases :   - `<span>` ignores height & width** when set to `display: inline`, and padding only applies horizontally.  
-                      -  Unordered lists (`<ul>`) lose bullet points** when `display: inline` is applied, requiring additional styling to restore them.  
-Using `inline-block` helps structure flexible layouts while keeping elements in the same line!**
+4. Special Cases :   - <span> ignores height & width when set to display: inline, and padding only applies horizontally.  
+                      -  Unordered lists (<ul>) lose bullet points when display: inline is applied, requiring additional styling to restore them.  
+Using inline-block helps structure flexible layouts while keeping elements in the same line!
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Essential CSS Concepts : 
-1. `display: none` vs. `visibility: hidden`**  
-- `display: none;` **hides** an element **completely**—it **does not take up space** in the layout.  
-- `visibility: hidden;` hides the element but **still occupies space** on the page.  
-2. `em` vs. `rem` (Font Sizing Units)**  
+1. display: none vs. visibility: hidden  
+- display: none; hides an element completely—it does not take up space in the layout.  
+- visibility: hidden; hides the element but still occupies space on the page.  
+2. em vs. rem (Font Sizing Units)  
 | Unit  | Relative To  | Behavior |
 |-------|------------|-----------|
-| `1em`  | Parent element’s font size | Can cause **compounding (snowball effect)** when nested. |
-| `1rem` | Root `<html>` font size | Prevents compounding, ensuring consistency. |  
-📌 Example : If `<html>` has `font-size: 16px`, then:  
-- `1em = 16px` (relative to the parent)  
-- `1rem = 16px` (always relative to root)  
-3. Alpha Channel (Opacity in Colors) :  Controls transparency in **RGBA** and **Hexadecimal** colors.In **Hex**, `00` (fully transparent) to `FF` (fully opaque). 
-  ```css
-  rgba(255, 255, 255, 0.3); /* White with 30% opacity */
+| 1em  | Parent element’s font size | Can cause compounding (snowball effect) when nested. |
+| 1rem | Root <html> font size | Prevents compounding, ensuring consistency. |  
+📌 Example : If <html> has font-size: 16px, then:  
+- 1em = 16px (relative to the parent)  
+- 1rem = 16px (always relative to root)  
+3. Alpha Channel (Opacity in Colors) :  Controls transparency in RGBA and Hexadecimal colors.In Hex, 00 (fully transparent) to FF (fully opaque). 
+  
+  rgba(255, 255, 255, 0.3); / White with 30% opacity /
 4. CSS Transitions (Smooth Animation) : Enable smooth property changes over time.  
-```css
+
 transition: margin-top 2s ease-in-out 0.2s;  
-📌 Shorthand Format :  `property | duration | timing-function | delay`  
+📌 Shorthand Format :  property | duration | timing-function | delay  
 5. CSS Transform (Element Manipulation) : Used to rotate, scale, skew, and translate elements.  
-```css
-transform: rotate(45deg); /* Clockwise rotation */
-transform: scale(2, 0.5); /* Scale: 2x width, 0.5x height */
-transform: translate(50px, 20px) skew(20deg, 10deg);  /* Moves element, then skews */
-6. `box-shadow` (Shadow Effects) :  box-shadow: 2px 2px 10px green;  /* X-offset | Y-offset | Blur radius | Color */
-7. `background-image` (Setting Background Images) 
+
+transform: rotate(45deg); / Clockwise rotation /
+transform: scale(2, 0.5); / Scale: 2x width, 0.5x height /
+transform: translate(50px, 20px) skew(20deg, 10deg);  / Moves element, then skews /
+6. box-shadow (Shadow Effects) :  box-shadow: 2px 2px 10px green;  / X-offset | Y-offset | Blur radius | Color /
+7. background-image (Setting Background Images) 
 background-image: url("image.jpg");
 background-size: contain | cover | auto;
-- `contain` → Fits the image inside the container **without cropping** (may leave gaps).  
-- `cover` → Scales the image to **fill the container**, cropping if needed.  
-- `auto` (default) → Keeps original size (may cause stretching).  
-📌 Use Cases :  ✔ `contain` → When full image visibility is needed.  
-                ✔ `cover` → When filling the container without gaps is preferred.  
+- contain → Fits the image inside the container without cropping (may leave gaps).  
+- cover → Scales the image to fill the container, cropping if needed.  
+- auto (default) → Keeps original size (may cause stretching).  
+📌 Use Cases :  ✔ contain → When full image visibility is needed.  
+                ✔ cover → When filling the container without gaps is preferred.  
 🚀 These properties help create responsive and visually appealing designs!
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 CSS Positioning Types :   
 1️⃣ Static (Default) :   - Normal flow : The element follows the document’s default flow.  
-                        - No effect from `top`, `bottom`, `left`, `right` properties.  
+                        - No effect from top, bottom, left, right properties.  
 - Example :  
-  ```css
+  
   .element { position: static; top: 50px; left: 20px; }
   📌 Use Case : Default behavior for elements that don’t need custom placement.
 2️⃣ Relative : 
 - Normal flow : The element remains in the document flow.  
-- Movable : You can adjust its position using `top`, `bottom`, `left`, `right` relative to its original position.  
+- Movable : You can adjust its position using top, bottom, left, right relative to its original position.  
 - Example :  
-  ```css
+  
   .element { position: relative; top: 20px; left: 30px; }
   📌 Use Case : Slight adjustments without affecting surrounding elements.
 3️⃣ Absolute :  - Removed from flow : Positioned relative to the nearest positioned ancestor (relative, absolute, or fixed).  
-                - If no positioned ancestor exists, it’s placed relative to `<html>`.  
+                - If no positioned ancestor exists, it’s placed relative to <html>.  
 - Example :  
-  ```css
+  
   .container { position: relative; }
   .element { position: absolute; top: 50px; left: 100px; }
   📌 Use Case : Positioning elements like tooltips, dropdowns, or popups inside a specific container.
 4️⃣ Fixed : - Removed from flow : Positioned relative to the viewport (browser window).  
             - Stays fixed even when the page is scrolled.  
 - Example :  
-  ```css
+  
   .element { position: fixed; top: 0; right: 0; width: 100px; height: 50px; background: red; }
   📌 Use Case : Sticky headers, floating buttons, or back-to-top buttons.  
 This overview helps in choosing the right positioning for elements based on layout needs! 🚀
@@ -234,7 +234,7 @@ Key Concepts : - Flex Container : The parent element that holds the flex items.
 Display: flex  - Enables Flexbox : Applies the Flexbox layout model to the container, making its children flexible.  
                - By - Default Direction : Items are arranged in a row (horizontal).  
 - Syntax :  
-  ```css
+  
   .container { display: flex; }
 Flex Direction : Sets the direction of flex items within the container :
 - row (default) : Items arranged horizontally (main axis: left to right).
@@ -278,25 +278,25 @@ Flex Sizing : Controls how items grow, shrink, and take up space in the containe
 - flex-shrink : Defines how much an item can shrink (default is 1, it will shrink if necessary).
 - flex-basis : Defines the initial size of an item (can be a specific value like 100px or auto).
 
-Shorthand: `flex` Property : Sets the three flex sizing properties in one line:
-- flex : `<flex-grow> <flex-shrink> <flex-basis>`  or  flex : `<flex-grow> <flex-basis>`
+Shorthand: flex Property : Sets the three flex sizing properties in one line:
+- flex : <flex-grow> <flex-shrink> <flex-basis>  or  flex : <flex-grow> <flex-basis>
   Example:
-  ```css
-  .item { flex: 1 0 100px; }  /* Grow 1, don’t shrink, initial size 100px */
-Flexbox simplifies layouts by allowing flexible arrangement and distribution of items. It’s especially useful for responsive designs, where the layout adjusts to the available space. Use properties like `justify-content`, `align-items`, and `flex` to control item positioning and size dynamically.
+  
+  .item { flex: 1 0 100px; }  / Grow 1, don’t shrink, initial size 100px /
+Flexbox simplifies layouts by allowing flexible arrangement and distribution of items. It’s especially useful for responsive designs, where the layout adjusts to the available space. Use properties like justify-content, align-items, and flex to control item positioning and size dynamically.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-What Does `margin: 0 auto;` Do in CSS?**  
-The CSS property `margin: 0 auto;` is used to **center block-level elements horizontally** within their container.  
+What Does margin: 0 auto; Do in CSS?  
+The CSS property margin: 0 auto; is used to center block-level elements horizontally within their container.  
 How It Works? :   
-- `0` → Sets **top and bottom margins** to `0`.  
-- `auto` → Distributes **equal left and right margins**, centering the element horizontally.  
-- Note : It works **only if the element has a defined width**.  
-Example : This will center `.container` horizontally within its parent.
-```css
+- 0 → Sets top and bottom margins to 0.  
+- auto → Distributes equal left and right margins, centering the element horizontally.  
+- Note : It works only if the element has a defined width.  
+Example : This will center .container horizontally within its parent.
+
 .container {
-    width: 50%;  /* Required for centering */
+    width: 50%;  / Required for centering /
     margin: 0 auto;
     background-color: lightblue;
     text-align: center;
@@ -313,22 +313,22 @@ Grid Model in CSS : The CSS Grid Model consists of several key components:
 Grid Lines : The dividing lines that separate grid cells.They can be horizontal (row lines) or vertical (column lines) and are used to position items explicitly using grid-row-start, grid-column-start, etc.
 Grid Cell : The smallest unit in a grid, formed by the intersection of a row and a column.Similar to a table cell but more flexible.
 Grid Track : The space between two adjacent grid lines.It can be either a row track (between two row lines) or a column track (between two column lines).
-Grid Template in CSS : The `grid-template` properties define the structure of a grid by specifying **grid lines** and **track sizing**.  
-1. `grid-template-rows`:   - Defines the height of each row in a grid.  
+Grid Template in CSS : The grid-template properties define the structure of a grid by specifying grid lines and track sizing.  
+1. grid-template-rows:   - Defines the height of each row in a grid.  
                            - The values represent the size of each row.  
 Example :   
-```css
+
 .container {
   display: grid;
   grid-template-rows: 100px 200px auto;
 }
 - The first row is 100px tall.  
 - The second row is 200px tall.  
-- The third row takes up the remaining available space (`auto`).  
-2. `grid-template-columns` :   - Defines the width of each column in a grid.  
+- The third row takes up the remaining available space (auto).  
+2. grid-template-columns :   - Defines the width of each column in a grid.  
                                - The values represent the size of each column.  
 Example :  
-```css
+
 .container {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -336,7 +336,7 @@ Example :
 - The first column takes 1 fraction of the available space.  
 - The second column takes 2 fractions (twice as large as the first).  
 - The third column takes 1 fraction of the space.  
-`grid-template-rows: repeat()` in CSS Grid : The `repeat()` function in `grid-template-rows` allows you to create rows with a repeating pattern, reducing redundancy in code.  
+grid-template-rows: repeat() in CSS Grid : The repeat() function in grid-template-rows allows you to create rows with a repeating pattern, reducing redundancy in code.  
 Syntax : grid-template-rows: repeat(number_of_times, row_size);
 Examples :  1. Equal-sized Rows :- Creates 3 rows, each 100px tall. 
 .container {
@@ -353,14 +353,14 @@ Examples :  1. Equal-sized Rows :- Creates 3 rows, each 100px tall.
   display: grid;
   grid-template-rows: repeat(2, 100px) 200px;
 }
-4. Using `fr` (Fractional Units) :- Creates 3 rows that share the available space equally.  
+4. Using fr (Fractional Units) :- Creates 3 rows that share the available space equally.  
 .container {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
 }
 
-`grid-template-columns: repeat()` in CSS Grid :   
-The `repeat()` function in `grid-template-columns` works similarly to `grid-template-rows`, allowing you to define column patterns efficiently.  
+grid-template-columns: repeat() in CSS Grid :   
+The repeat() function in grid-template-columns works similarly to grid-template-rows, allowing you to define column patterns efficiently.  
 Syntax : grid-template-columns: repeat(number_of_times, column_size);
 Examples :  1. Equal-Sized Columns :- Creates 3 columns, each 150px wide.  
 .container {
@@ -378,13 +378,13 @@ Examples :  1. Equal-Sized Columns :- Creates 3 columns, each 150px wide.
   display: grid;
   grid-template-columns: repeat(2, 100px) 200px;
 }
-4. Using `fr` (Fractional Units) :- Creates 3 columns that share the available space equally.    
+4. Using fr (Fractional Units) :- Creates 3 columns that share the available space equally.    
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-5. Responsive Layout with `minmax()` :- Creates columns that are at least 200px wide but expand to fit the available space.  
-                                      - `auto-fit` dynamically adjusts the number of columns based on the container's width.  
+5. Responsive Layout with minmax() :- Creates columns that are at least 200px wide but expand to fit the available space.  
+                                      - auto-fit dynamically adjusts the number of columns based on the container's width.  
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -395,7 +395,7 @@ Grid Gaps in CSS (gap, row-gap, column-gap) : The grid gap properties in CSS are
 2. row-gap : Defines the space between grid rows.
 3. column-gap : Defines the space between grid columns.
 
-Grid-column : In CSS Grid Layout, the `grid-column` property is used to define the starting and ending positions of an item within the grid columns. This property allows you to control how far across the grid the item will span, from which column it will start, to which column it will end.
+Grid-column : In CSS Grid Layout, the grid-column property is used to define the starting and ending positions of an item within the grid columns. This property allows you to control how far across the grid the item will span, from which column it will start, to which column it will end.
 
 Here’s how it works: - grid-column-start : Defines where the item should start (which column line it will start from).
                      - grid-column-end : Defines where the item should end (which column line it will end at).
@@ -408,7 +408,7 @@ Example: .item {
 In this example, the item will:
 - Start at the 2nd column line (the line between the second and third columns).
 - End at the 4th column line (the line between the fourth and fifth columns).
-In CSS Grid, the shorthand `grid-column: start_col / span number;` defines an item's position across columns :
+In CSS Grid, the shorthand grid-column: start_col / span number; defines an item's position across columns :
 - start_col : The grid line where the item starts.
 - span number : How many columns the item should span from the starting line.
 Example : .item {
@@ -418,10 +418,10 @@ Example : .item {
 - It spans 3 columns, covering columns 2, 3, and 4.
 This shorthand is useful for defining how many columns an item spans without specifying an explicit ending line.
 The grid-row works the same as grid-column but in the terms of rows instead of columns.
-Notes:- The `start` value is the column line where the grid item begins.
-      - The `end` value is the column line where the grid item ends.
+Notes:- The start value is the column line where the grid item begins.
+      - The end value is the column line where the grid item ends.
       - Grid lines are numbered, starting from 1 at the top-left corner.
-      - You can also use negative numbers to count lines from the end (e.g., `grid-column: -3 / -1;` would start 3 columns before the last column and end at the last column).
+      - You can also use negative numbers to count lines from the end (e.g., grid-column: -3 / -1; would start 3 columns before the last column and end at the last column).
       - This allows for a flexible and responsive layout in CSS Grid.
 
 In CSS Grid, the following properties are used to control the alignment and positioning of grid items within their respective grid cells and containers. Here’s a breakdown of common alignment properties in CSS Grid:
@@ -491,9 +491,9 @@ How % Works in Animation?
 100% → Ending state (same as to)
 Intermediate percentages (25%, 50%, 75%) → Define key points in between
 For Example : @keyframes colorChange {
-              0% { background-color: red; }   /* Start */
-              50% { background-color: blue; }  /* Midway */
-              100% { background-color: green; } /* End */
+              0% { background-color: red; }   / Start /
+              50% { background-color: blue; }  / Midway /
+              100% { background-color: green; } / End /
             }
             
             div {
@@ -505,18 +505,18 @@ For Example : @keyframes colorChange {
 looks good on all devices—desktops, tablets, and mobiles.
 @media (max-width: 768px) {
   body {
-    background-color: lightcoral;  /* For tablets and smaller devices */
+    background-color: lightcoral;  / For tablets and smaller devices /
   }
 }
 
 @media (max-width: 480px) and {min-width:600px} {
   body {
-    background-color: lightgreen;  /* For mobile screens */
+    background-color: lightgreen;  / For mobile screens /
   }
 }
 @media (orientation:landscape) {
   p {
-    font-size: 18px;  /* For screens 600px and larger */
+    font-size: 18px;  / For screens 600px and larger /
   }
 }
 z-index : It decides the stack level of elements.Overlapping elements with a larger z-index cover those with a smaller one.Only applied for z-index position static or default position.
@@ -530,7 +530,7 @@ Example : .box1 {
   position: absolute;
   top: 50px;
   left: 50px;
-  z-index: 1; /* Lower stack level */
+  z-index: 1; / Lower stack level /
 }
 
 .box2 {
@@ -540,7 +540,7 @@ Example : .box1 {
   position: absolute;
   top: 100px;
   left: 100px;
-  z-index: 2; /* Higher stack level, appears on top */
+  z-index: 2; / Higher stack level, appears on top /
 }
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 In CSS, height: 100vh means that the element will take up 100% of the viewport height.
