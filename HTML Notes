@@ -1,15 +1,32 @@
                                                                --HTML Notes--
+### What is HTML? → HTML (HyperText Markup Language) is the standard language used to create and structure content on the web. It forms the backbone of every 
+website, defining elements like text, images, links, and layout to make content visible and organized in browsers.HTTP is the mechanism by which HTML documents 
+are transported across the internet.
+
 ### HTML Entities:
 HTML entities represent special characters that cannot be typed easily using a standard keyboard. They start with an ampersand (&) and end with a semicolon (;). For example:
-- &hearts; → ♥ (Heart symbol)
-- &#9829; → ♥ (Heart symbol)
+- &hearts; → ♥ (Heart symbol) and #9829; → ♥ (Heart symbol)
 - &lt; → < (Less than symbol)
 - &nbsp; → (Space)
 - &quot; → " (Double quotes)
 - &amp; → & (Ampersand)
 - &#9733; → ★ (Star symbol)
 
+HTML tags are the components which are used to design the structure of websites and to format HTML content.
 Entities also allow us to print symbols like the copyright symbol (&copy;) and registered trademark symbol (&reg;).
+Boilerplate code is the standard format or skeleton of writing HTML code.
+
+<!DOCTYPE HTML> {It tells the version of HTML}
+<html>          {HTML root element}
+  <head>        {Used to contain HTML page metadata}
+    <title>My First Page</title>
+  </head>
+  <body>
+    <p>Hello world</p>
+  </body>
+</html>
+
+###HTML 4 :- It uses a long doctype,has no semantic tags, need plugins for media, and has no canvas or SVG for graphics.
 
 ### Division (<div>) and Span (<span>):
 - <div> is used to group elements together and is useful for separating content that belongs to different sections.
